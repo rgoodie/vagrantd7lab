@@ -4,10 +4,10 @@ debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password_again pa
 
 # Install packages
 apt-get update
-apt-get -y install mysql-server-5.5 php5-mysql libsqlite3-dev apache2 php5 php5-dev php5-gd build-essential php-pear ruby1.9.1-dev
+apt-get -y install mysql-server-5.5 php5-mysql libsqlite3-dev apache2 php5 php5-dev php5-gd build-essential php-pear 
 
 # Set timezone
-echo "America/New_York" | tee /etc/timezone
+echo "Chiago/New_York" | tee /etc/timezone
 dpkg-reconfigure --frontend noninteractive tzdata
 
 # Setup database
@@ -32,9 +32,9 @@ a2enmod rewrite
 cat /var/custom_config_files/apache2/default | tee /etc/apache2/sites-available/000-default.conf
 
 # Install Mailcatcher
-echo "Installing mailcatcher"
-gem install mailcatcher --no-ri --no-rdoc
-mailcatcher --http-ip=192.168.33.20
+#echo "Installing mailcatcher"
+#gem install mailcatcher --no-ri --no-rdoc
+#mailcatcher --http-ip=192.168.33.20
 
 # Configure PHP
 sed -i '/;sendmail_path =/c sendmail_path = "/usr/local/bin/catchmail"' /etc/php5/apache2/php.ini
