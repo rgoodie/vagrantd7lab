@@ -1,0 +1,3 @@
+[submodule "www/drupal7/sites/all/modules/custom/oii"]
+	path = www/drupal7/sites/all/modules/custom/oii
+	url = git@github.com:rgoodie/oii.git
