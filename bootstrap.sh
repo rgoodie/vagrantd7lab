@@ -75,3 +75,6 @@ drush -y dis overlay
 drush dl coffee module_filter devel -y
 drush en coffee module_filter devel -y
 drush cc all && drush cron
+
+# Vim, Curl
+apt-get install vim curl -y
