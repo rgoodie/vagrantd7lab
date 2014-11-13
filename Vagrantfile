@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder "scripts", "/var/scripts", create: true
     config.vm.synced_folder "custom_config_files", "/var/custom_config_files", create: true
     
-    config.vm.synced_folder "custom_modules", "/var/www/drupal7/sites/all/modules/custom", create:true
+    #config.vm.synced_folder "custom_modules", "/var/www/drupal7/sites/all/modules/custom", create:true
 
     config.vm.provision :shell, :path => "bootstrap.sh"
     
