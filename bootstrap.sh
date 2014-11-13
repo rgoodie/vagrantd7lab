@@ -1,6 +1,6 @@
 # Configure MySQL root password
-debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password password wwsf2wstwv'
-debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password_again password wwsf2wstwv'
+debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password password root'
+debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password_again password root'
 
 # Install packages
 apt-get update
@@ -11,11 +11,11 @@ echo "America/New_York" | tee /etc/timezone
 dpkg-reconfigure --frontend noninteractive tzdata
 
 # Setup database
-echo "DROP DATABASE IF EXISTS test" | mysql -uroot -pwwsf2wstwv
-echo "CREATE USER 'drupal7'@'localhost' IDENTIFIED BY 'wwsf2wstwv'" | mysql -uroot -pwwsf2wstwv
-echo "CREATE DATABASE drupal7" | mysql -uroot -pwwsf2wstwv
-echo "GRANT ALL ON drupal7.* TO 'drupal7'@'localhost'" | mysql -uroot -pwwsf2wstwv
-echo "FLUSH PRIVILEGES" | mysql -uroot -pwwsf2wstwv
+echo "DROP DATABASE IF EXISTS test" | mysql -uroot -proot
+echo "CREATE USER 'drupal7'@'localhost' IDENTIFIED BY 'root'" | mysql -uroot -proot
+echo "CREATE DATABASE drupal7" | mysql -uroot -proot
+echo "GRANT ALL ON drupal7.* TO 'drupal7'@'localhost'" | mysql -uroot -prootv
+echo "FLUSH PRIVILEGES" | mysql -uroot -proot
 
 # Apache changes
 # add line to end of conf file
