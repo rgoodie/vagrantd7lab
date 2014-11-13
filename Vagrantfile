@@ -17,9 +17,9 @@ Vagrant.configure("2") do |config|
 
     config.vm.synced_folder "/home/matt/vagd7/www", "/var/www", create: true,type: "nfs"
     #,:mount_options => ["dmode=777","fmode=666"]
-    config.vm.synced_folder "/home/matt/vagd7/sqldump", "/var/sqldump", create: true
-    config.vm.synced_folder "/home/matt/vagd7/scripts", "/var/scripts", create: true
-    config.vm.synced_folder "/home/matt/vagd7/custom_config_files", "/var/custom_config_files", create: true
+    config.vm.synced_folder "sqldump", "/var/sqldump", create: true
+    config.vm.synced_folder "scripts", "/var/scripts", create: true
+    config.vm.synced_folder "custom_config_files", "/var/custom_config_files", create: true
 
     config.vm.provision :shell, :path => "bootstrap.sh"
     
