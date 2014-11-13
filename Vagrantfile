@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
         v.customize ["modifyvm", :id, "--name", "D8Lab"]
     end
 
-    config.vm.synced_folder "www", "/var/www", create: true,type: "nfs"
+    config.vm.synced_folder "www", "/var/www", create: true #type: "nfs"
     #,:mount_options => ["dmode=777","fmode=666"]
     config.vm.synced_folder "sqldump", "/var/sqldump", create: true
     config.vm.synced_folder "scripts", "/var/scripts", create: true
