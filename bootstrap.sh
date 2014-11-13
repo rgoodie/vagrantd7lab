@@ -70,11 +70,9 @@ chmod 777 /var/www/drupal7/sites/default/settings.php
 cd /var/www/drupal7
 drush -y site-install standard --db-url='mysql://drupal7:wwsf2wstwv@localhost/drupal7' --site-name="drupal7 Lab"  --account-name=admin --account-pass=admin
 
-# no overlay
-drush -y dis overlay
+# coffee
 drush dl coffee module_filter devel -y
-drush en coffee module_filter devel -y
-drush cc all && drush cron
+
 
 # Vim, Curl
 apt-get install vim curl -y
