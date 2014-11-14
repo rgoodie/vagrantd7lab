@@ -7,3 +7,7 @@ drush en features ftools -y
 drush en coffee -y
 drush en module_filter -y
 drush en devel -y
+
+drush cc all 
+drush cron
+
