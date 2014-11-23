@@ -72,6 +72,7 @@ drush -y site-install standard --db-url='mysql://root:root@localhost/drupal7' --
 
 # coffee
 drush dl coffee module_filter devel -y
+drush en coffee module_filter devel -y -r /var/www/drupal-7
 
 
 # Vim, Curl
