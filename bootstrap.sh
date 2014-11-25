@@ -8,7 +8,7 @@ apt-get -y install mysql-server-5.5 php5-mysql libsqlite3-dev apache2 php5 php5-
 apt-get install vim git curl -y
 
 # Set timezone
-echo "Chiago/New_York" | tee /etc/timezone
+echo "America/Chiago" | tee /etc/timezone
 dpkg-reconfigure --frontend noninteractive tzdata
 
 # Setup database
