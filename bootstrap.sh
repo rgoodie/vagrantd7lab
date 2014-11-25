@@ -5,6 +5,7 @@ debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password_again pa
 # Install packages
 apt-get update
 apt-get -y install mysql-server-5.5 php5-mysql libsqlite3-dev apache2 php5 php5-dev php5-gd build-essential php-pear 
+apt-get install vim git curl -y
 
 # Set timezone
 echo "Chiago/New_York" | tee /etc/timezone
@@ -70,10 +71,5 @@ chmod 777 /var/www/drupal7/sites/default/settings.php
 cd /var/www/drupal7
 drush -y site-install standard --db-url='mysql://root:root@localhost/drupal7' --site-name="drupal7 Lab"  --account-name=admin --account-pass=admin
 
-# coffee
-drush dl coffee module_filter devel -y
-drush en coffee module_filter devel -y -r /var/www/drupal-7
 
 
-# Vim, Curl
-apt-get install vim git curl -y
