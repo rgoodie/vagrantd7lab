@@ -76,4 +76,4 @@ drush en coffee module_filter devel -y -r /var/www/drupal-7
 
 
 # Vim, Curl
-apt-get install vim curl -y
+apt-get install vim git curl -y
