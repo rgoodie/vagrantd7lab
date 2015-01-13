@@ -71,5 +71,10 @@ chmod 777 /var/www/drupal7/sites/default/settings.php
 cd /var/www/drupal7
 drush -y site-install standard --db-url='mysql://root:root@localhost/drupal7' --site-name="drupal7 Lab"  --account-name=admin --account-pass=admin
 
+# symlink me darlin
+rm -rf /var/www/html
+cd /var/www/
+ln -s /var/www/drupal7 html
+
 
 
