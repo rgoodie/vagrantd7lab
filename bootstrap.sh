@@ -8,8 +8,12 @@ apt-get -y install mysql-server-5.5 php5-mysql libsqlite3-dev apache2 php5 php5-
 apt-get install vim git curl -y
 
 # Set timezone
-echo "America/Chiacgo" | tee /etc/timezone
+echo "America/Chicago" | tee /etc/timezone
 dpkg-reconfigure --frontend noninteractive tzdata
+
+# Set Central timezone using /etc/localtime file
+rm /etc/localtime 
+cd /etc/ ; ln -s /usr/share/zoneinfo/US/Central localtime
 
 # Setup database
 echo "DROP DATABASE IF EXISTS test" | mysql -uroot -proot
